@@ -33,8 +33,8 @@ for image, steering_measurement in zip(images, steeting_measurements):
     augmented_steering_measurements.append(steering_measurement*-1.0)
     
 # Converting to Numpy arrays as that's the format keras requires
-X_train = np.array(images)
-y_train = np.array(steeting_measurements)
+X_train = np.array(augmented_images)
+y_train = np.array(augmented_steering_measurements)
                                  
 from keras.models import Sequential
 from keras.layers import Flatten, Dense
